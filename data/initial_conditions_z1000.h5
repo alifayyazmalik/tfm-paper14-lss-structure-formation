@@ -1,0 +1,8 @@
+# For z≈1000 initial conditions
+import h5py
+
+with h5py.File('initial_conditions_z1000.h5', 'w') as f:
+    f.create_dataset('T_plus', data=np.random.normal(0, 1e-5, (1024,1024,1024)))
+    f.create_dataset('T_minus', data=np.random.normal(0, 1e-5, (1024,1024,1024)))
+    f.attrs['lambda'] = 1.2e-5
+    f.attrs['beta'] = 14.8  # kpc
